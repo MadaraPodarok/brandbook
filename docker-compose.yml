@@ -1,0 +1,68 @@
+version: '3.8'
+services:
+  app:
+    working_dir: /var/www/brandbook
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    container_name: app
+    hostname: app
+    volumes:
+      - type: bind
+        source: ./
+        target: /var/www/brandbook
+    networks:
+      - bb-network
+
+  webserver:
+    container_name: nginx
+    hostname: nginx
+    depends_on:
+      - app
+    image: 'nginx:alpine'
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./
+        target: /var/www/brandbook
+      - type: bind
+        source: ./docker/nginx/conf.d
+        target: /etc/nginx/conf.d
+        read_only: true
+      - type: bind
+        source: ./logs/nginx
+        target: /var/log/nginx
+    ports:
+      - target: 80
+        published: 8086
+      - target: 443
+        published: 8087
+    networks:
+      - bb-network
+        
+  mysql:
+    image: mysql
+    restart: always
+    container_name: mysql
+    hostname: mysql
+    environment:
+      MYSQL_DATABASE: 'kontora_Nikitin'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: '1234'
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+#    volumes:
+#      - my-db:/var/lib/mysql  
+    networks:
+      - bb-network     
+
+networks: # Виртуальная сеть для объединения контейнеров
+  bb-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.220.0/28
