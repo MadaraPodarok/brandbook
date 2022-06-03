@@ -13251,9 +13251,59 @@ PERFORMANCE OF THIS SOFTWARE.
     <link rel="stylesheet" type="text/css"
           href="./public/css/rb_wixui.thunderbolt[ImageZoom].41f1fa78.min.css">
     <script src="./public/js/rb_wixui.thunderbolt[ImageZoom].7da06a47.bundle.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="./public/css/icons.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/preload.css">
+    <script type="text/javascript" src="./public/js/jquery.min.js"></script>
+<!--    <script>-->
+<!--        // $(window).on("load",function(){-->
+<!--        //     $(".loader-wrapper").fadeOut("slow");-->
+<!--        //     $('body').toggleClass('loaded');-->
+<!--        // });-->
+<!--        // const preloader = document.querySelector('.preloader');-->
+
+<!--        // const fadeOutEffect = setInterval(() => {-->
+<!--        //     if (!preloader.style.opacity) {-->
+<!--        //         preloader.style.opacity = 1;-->
+<!--        //     }-->
+<!--        //     if (preloader.style.opacity > 0) {-->
+<!--        //         preloader.style.opacity -= 0.1;-->
+<!--        //     } else {-->
+<!--        //         clearInterval(fadeEffect);-->
+<!--        //     }-->
+<!--        // }, 300);-->
+<!--        // window.addEventListener('load', fadeOutEffect);-->
+
+<!--      -->
+<!--    </script>-->
+<!--    <script>-->
+<!--        window.onload = function () {-->
+<!--            document.body.classList.add('loaded_hiding');-->
+<!--            window.setTimeout(function () {-->
+<!--                document.body.classList.add('loaded');-->
+<!--                document.body.classList.remove('loaded_hiding');-->
+<!--            }, 500);-->
+<!--        }-->
+<!--    </script>-->
+    <script>
+        $(window).on('load', function () {
+            $('body').addClass('loaded_hiding');
+            window.setTimeout(function () {
+                $('body').addClass('loaded');
+                $('body').removeClass('loaded_hiding');
+            }, 500);
+        });
+    </script>
 </head>
 <body class="" style="">
+<div class="pre_preloader">
+    <div class="preloader">
+        <img
+                src="./public/images/twogears.svg"
+                alt="svg custom"
+                class="preloader__image"
+        />
+    </div>
+</div>
+
 <script type="text/javascript">
     var bodyCacheable = true;
     
@@ -21449,7 +21499,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                                                                                             class="TSP6V"
                                                                                                             style="left:0;opacity:1;object-position:50% 50%;object-fit:cover;width:calc(100% + 1px);height:calc(100% + 1px)"
                                                                                                             data-hook="image"
-                                                                                                            alt="Product Launch">
+                                                                                                            alt="Запуск продукта">
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="JKi68 y5FVx"
@@ -21461,8 +21511,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                                                                                              data-hook="title">
                                                                                                             <a class="DTbMp"
                                                                                                                href=""
-                                                                                                               rel="">Product
-                                                                                                                Launch</a>
+                                                                                                               rel="">Product Launch</a>
                                                                                                         </div>
                                                                                                         <div class="lNseS PPhBx"
                                                                                                              data-hook="short-date-location">
@@ -21997,7 +22046,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                                                                              data-testid="richTextElement">
                                                                                             <p class="font_9"
                                                                                                style="text-align:center; line-height:1.875em; font-size:15px;">
-                                                                                                <span class="color_11">ул. Арбат, 1а, Москва, 119019, Россия</span>
+                                                                                                <span class="color_11">ул. Заки Валиди, 66, Уфа, 119019, Россия</span>
                                                                                             </p></div>
                                                                                         <div id="comp-l314w1yl4"
                                                                                              class="_1Q9if"
@@ -22006,7 +22055,7 @@ PERFORMANCE OF THIS SOFTWARE.
                                                                                                style="text-align:center; line-height:1.875em; font-size:15px;">
                                                                                                 <span class="color_11"><a
                                                                                                         data-auto-recognition="true"
-                                                                                                        href="mailto:sashatujh123@gmail.com">sashatujh123@gmail.com</a></span>
+                                                                                                        href="mailto:business_ru@gmail.com">business_ru@gmail.com</a></span>
                                                                                             </p></div>
                                                                                         <div id="comp-l314w1ym"
                                                                                              class="_1Q9if"
